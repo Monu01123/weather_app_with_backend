@@ -1,0 +1,38 @@
+# Node modules
+node_modules/
+
+# Build output
+build/
+dist/
+
+# Logs
+*.log
+
+# Dependency directories
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE or editor directories and files
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Environment variable files
+.env
+.env.* 
+
+# Optional npm cache directory
+.npm/
+
+# Test coverage
+coverage/
+
+# .env files for local development
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
