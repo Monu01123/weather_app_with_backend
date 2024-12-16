@@ -1,5 +1,8 @@
 import express from "express";
 import axios from "axios";
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const router = express.Router();
 
@@ -11,7 +14,7 @@ router.get("/weather/:city", async (req, res) => {
 
   try {
     const response = await axios.get(
-      `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=319af9de2b6d68f7e19665ba73bd301b`
+      `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.APP_ID}`
     );
     const weatherData = response.data;
 
@@ -36,7 +39,7 @@ router.get("/weather/:city", async (req, res) => {
 router.get("/weather", async (req, res) => {
   try {
     const response = await axios.get(
-      `http://api.weatherstack.com/current?access_key=0b1501703844c29589025594bd0293bf&query=fetch:ip`
+      `http://api.weatherstack.com/current?access_key=${process.env.ACCESS_KEY}&query=fetch:ip`
     );
 
     console.log("Weather API Response:", response.data);
